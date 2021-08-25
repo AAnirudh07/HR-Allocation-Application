@@ -9,5 +9,11 @@ def getData():
     data ={"id":2,"name":"Anna"}
     return data
 
-@app.route("\postTest"):
+@app.route("/postTest", methods=["POST"])
 def postData():
+	data = request.data
+	print(data)
+	return {"message" : "success"}
+
+if __name__ == "__main__":
+	app.run()
